@@ -14,6 +14,7 @@ drop table if exists version_info;
 create table version_info
 (
     id                   int(11) not null auto_increment,
+    version_desc         varchar(511),
     download_url         varchar(127),
     version              varchar(31),
     create_time          datetime,

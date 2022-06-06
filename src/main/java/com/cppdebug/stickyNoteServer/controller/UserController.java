@@ -31,8 +31,11 @@ public class UserController {
         userService.saveVisitLog(request, guid, currentVersion);
         // 获取最新版本信息并返回
         VersionInfo versionInfo = userService.getVersionInfo();
-        versionInfo.setId(null);
-        return CommonResult.ok(versionInfo);
+        if (null != versionInfo) {
+            versionInfo.setId(null);
+            return CommonResult.ok(versionInfo);
+        }
+        return CommonResult.fail("暂无版本信息！");
     }
 
 }

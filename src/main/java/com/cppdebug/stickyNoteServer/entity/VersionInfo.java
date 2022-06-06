@@ -18,6 +18,11 @@ public class VersionInfo {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    /**
+     * 更新内容
+     */
+    private String versionDesc;
+
     private String downloadUrl;
 
     private String version;
